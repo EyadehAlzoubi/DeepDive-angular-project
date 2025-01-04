@@ -1,16 +1,25 @@
 <app-header/>
 <main>
   <div id="dashboard">
-    <div class="dashboard-item">
+    <app-dashboad-item
+    [image]="{src: 'status.png', alt: 'A signal symbol'}"
+    [title]="'Server status'"
+    >
       <app-server-status/>
-    </div>
+    </app-dashboad-item>
 
-    <div class="dashboard-item">
-      <app-traffic/>
-    </div>
+    <app-dashboad-item
+    [image]="{src: 'globe.png', alt: 'A globe'}"
+    [title]="'Traffic'"
+    >  
+    <app-traffic/>
+    </app-dashboad-item>
 
-    <div class="dashboard-item">
-      <app-tickets/>
-    </div>
+    <app-dashboad-item
+    [image]="{src: 'list.png', alt: 'A list'}"
+    [title]="'Support Ticket'"
+    >
+    <app-tickets/>
+    </app-dashboad-item>
   </div>
 </main>
