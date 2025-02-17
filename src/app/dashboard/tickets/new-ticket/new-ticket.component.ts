@@ -14,18 +14,22 @@ export class NewTicketComponent {
 
   // @ViewChild('form') form?:ElementRef<HTMLFormElement>;
   add = output<{title:string, text:string}>();
-
   private form = viewChild<ElementRef<HTMLFormElement>>('form');
 
-  onSubmit (title: string , textTikect: string){
+  enteredTitle ='';
+  enteredText = '';
+
+  onSubmit (){
     // console.log(title);
     // console.log(textTikect);
 
     // this.form?.nativeElement.reset();
 
-    this.add.emit({title:title,text:textTikect});
+    this.add.emit({title:this.enteredTitle,text:this.enteredText});
 
-    this.form()?.nativeElement.reset();
+    // this.form()?.nativeElement.reset();
+    this.enteredText ='';
+    this.enteredTitle='';
 
  
   }
